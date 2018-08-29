@@ -142,6 +142,14 @@ const indent = (tree, {rules: {indent, eol, blankLines, useExistingLineBreaks}})
 		}
 
 		if (useExistingLineBreaks) {
+			if (
+				level > 0
+				&& typeof node === 'object' && typeof tree[index + 1] === 'object'
+				&& ((node.tag === 'script' && tree[index + 1].tag === 'script') || (node.tag === 'link' && tree[index + 1].tag === 'link'))
+			) {
+				return [ ...previousValue, node, `\n${getIndent(level)}`];
+			}
+
 			if (typeof node === 'string') {
 				node = node.replace(/([\r\n\v\f]+)/g, function (match, p1, offset, string) {
 					if ((index === tree.length - 1) && (offset + match.length === string.length)) {
