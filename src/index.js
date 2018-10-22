@@ -323,8 +323,8 @@ const mini = (tree, {mini}) => {
 
 const beautify = (tree, options) => [
 	clean,
-	parseConditional,
-	renderConditional,
+	// parseConditional,
+	// renderConditional,
 	indent,
 	lowerElementName,
 	lowerAttributeName,
