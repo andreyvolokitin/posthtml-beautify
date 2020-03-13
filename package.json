@@ -43,8 +43,8 @@
     "posthtml-render": "1.0.6"
   },
   "devDependencies": {
-    "@commitlint/cli": "^5.2.0",
-    "@commitlint/config-angular": "^5.1.1",
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-angular": "^8.3.4",
     "ava": "*",
     "babel-cli": "^6.26.0",
     "babel-eslint": "^8.2.1",
