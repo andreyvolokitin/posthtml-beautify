@@ -56,6 +56,9 @@ const clean = (tree, options) => {
 				: typeof node === 'object' || (typeof node === 'string' && (node.trim().length !== 0 || /doctype/gi.test(node)));
 		})
 		.map(node => {
+			if (node.tag === 'script') {
+				return node
+			}
 			if (Object.prototype.hasOwnProperty.call(node, 'content')) {
 				node.content = clean(node.content, options);
 			}
